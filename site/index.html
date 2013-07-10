@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Navi.js - jQuery Content Switcher</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="description" content="Navi.js is a content switching plugin for jQuery. It is easy to use and can be used with a variety of other plugins, and can even be nested in itself.">
+  <meta name="keywords" content="jQuery content switch, content switcher, jQuery plugin, hashchange, Navi, Navi.js, Download navi.js, Tyler, Grant, Tyler Grant, hashtag content change, content change, page change plugin, content change plugin, jQuery content change, jQuery page change, jQuery, single page, single page website, one page website plugin, navi jquery plugin, jquery navigation, jquery navigation plugin, jquery hashtag content change, panel switch, jquery replace content">
+  <link rel="stylesheet" href="stylesheets/app.css" />
+  
+  <link rel="stylesheet" href="stylesheets/animate.css">
+  <link rel="stylesheet" href="stylesheets/responsive-tables.css">
+
+  <script src="javascripts/vendor/custom.modernizr.js"></script>
+
+
+</head>
+<body>
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <h1 class="chunk">Navi.js <small>Content Switcher <small class="subheader">for developers</small></small></h1>
+            <div class="row">
+                <div class="large-4 small-12 columns">
+                    <nav id="navi">
+                        <ul class="nav-bar vertical">
+                            <li class="active" data-title=" - Home">
+                                <a href="#!/home">Home</a>
+                            </li>
+                            <li data-title=" - About">
+                                <a href="#!/about">About</a>
+                            </li>
+                            <li data-title=" - Documents">
+                                <a href="#!/docs">Documents</a>
+                            </li>
+                            <li data-title=" - Examples">
+                                <a href="#!/examples">Examples</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="row">
+                        <div class="large-12 small-8 columns small-centered">
+                            <fieldset>
+                                <legend>Animation Changer</legend>
+                                <div class="row">
+                                    <div class="large-8 small-8 columns small-centered">
+                                        <label>Animation</label>
+                                        <select name="animation">
+                                            <option value="slideUp">Slide Up</option>
+                                            <option value="slideLeft">Slide Left</option>
+                                            <option value="slideUpLeft">Slide Up-Left</option>
+                                            <option value="rotateOutDownLeft">Rotate Out Down Left</option>
+                                            <option value="fade">Fade</option>
+                                            <option value="bounceOutDown">Bounce Out Down</option>
+                                            <option value="bounceOut">Bounce Out</option>
+                                            <option value="lightSpeed">Light Speed</option>
+                                            <option value="roll">Roll</option>
+                                            <option value="flipX">Flip X</option>
+                                            <option value="flipY">Flip Y</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-8 small-8 columns small-centered">
+                                        <label>Speed</label>
+                                        <input type="text" pattern="^\d{1,5}$" name="animationSpeed"
+                                        value="400" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="row hide-for-small">
+                        <div class="large-12 small-4 columns">
+                            <h5 class="chunk small">Download Navi</h5>
+                            <div style="text-align:center;">
+                                <a class="download min" href="download/navi-1.9.min.rar" target="_blank">navi.min.js<span class="version">(v1.9 Compressed)</span></a>
+                                <a class="download full" href="download/navi-1.9.rar" target="_blank">navi.js<span class="version">(v1.9 Uncompressed)</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="large-12 small-4 columns">
+                            <ul class="github">
+                                <li class="large-6 columns" style="text-align:center;"><iframe src="http://ghbtns.com/github-btn.html?user=tgrant54&repo=Navi.js&type=fork&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0"  height="40"></iframe></li>
+    						<li class="large-6 columns"><iframe src="http://ghbtns.com/github-btn.html?user=tgrant54&repo=Navi.js&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0"  height="40"></iframe></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>                    
+                <div class="large-8 small-12 columns">
+                    <section id="content">
+                        <ul>
+                            <li id="home"></li>
+                            <li id="about"></li>
+                            <li id="docs"></li>
+                            <li id="examples"></li>
+                        </ul>
+                    </section>
+                    <section id="breadcrumbs">
+                        <ul class="breadcrumbs right">
+                            <li>
+                                <a href="#!/home">Home</a>
+                            </li>
+                            <li>
+                                <a href="#!/about">About</a>
+                            </li>
+                            <li>
+                                <a href="#!/docs">Documents</a>
+                            </li>
+                            <li>
+                                <a href="#!/examples">Examples</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <hr />
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" class="lic" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Navi.js</span> by
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://navi.grantcr.com"
+                property="cc:attributionName" rel="cc:attributionURL">Tyler Grant</a> is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+            </footer>
+        </div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="javascripts/foundation/foundation.js"></script>
+    <script src="javascripts/foundation/foundation.magellan.js"></script>
+    <script src="javascripts/foundation/foundation.cookie.js"></script>
+    <script src="javascripts/foundation/foundation.clearing.js"></script>
+    <script src="javascripts/foundation/foundation.placeholder.js"></script>
+    <script src="javascripts/foundation/foundation.reveal.js"></script>
+    <script src="javascripts/foundation/foundation.orbit.js"></script>
+    <script src="javascripts/foundation/foundation.alerts.js"></script>
+    <script src="javascripts/foundation/foundation.topbar.js"></script>
+    <script src="javascripts/foundation/foundation.section.js"></script>
+    <script src="javascripts/foundation/foundation.joyride.js"></script>
+    <script src="javascripts/foundation/foundation.dropdown.js"></script>
+    <script src="javascripts/foundation/foundation.tooltips.js"></script>
+    <script src="javascripts/foundation/foundation.forms.js"></script>
+    <script src="javascripts/navi-1.9.js"></script>
+    <script id="stoggle" src="javascripts/script.js"></script>
+    <script src="javascripts/responsive-tables.js"></script>
+    <script src="javascripts/anichange.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+</html>
