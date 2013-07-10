@@ -61,11 +61,11 @@ that explains this a little more in depth.
      + <b>selector</b> - The selector of where your markup will be appended in the html.
  
 * <b>metaDescription</b> - Returns the html for description.
- - <h3>Parameters</b>
+ - <h3>Parameters</h3>
      + <b>content</b> - Description that will be placed in the returned tag.
  
 * <b>metaKeywords</b> - Returns the html for keywords.
- - <h3>Parameters</b>
+ - <h3>Parameters</h3>
      + <b>keywords</b> - Comma-separated string of keywords.
  
 * <b>loadFile</b> - Returns the html of a file.
