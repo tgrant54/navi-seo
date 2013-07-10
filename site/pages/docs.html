@@ -1,0 +1,383 @@
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="chunk">Documents</h2>
+      <hr />
+
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="alert-box secondary">
+            <h3 class="chunk">Markup</h3>
+
+            <div class="row">
+              <div class="large-11 columns small-centered">
+                <h4 class="chunk">HTML</h4>
+
+                <div class="panel">
+                  <code>&lt;nav id='naviMenu'&gt;<br />
+                  &nbsp;&nbsp;&lt;ul&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="active"&gt; &lt;a
+                  href='#!/page1'&gt;Page1&lt;/a&gt; &lt;/li&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt; &lt;a
+                  href='#!/page2'&gt;Page2&lt;/a&gt; &lt;/li&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt; &lt;a
+                  href='#!/page3'&gt;Page3&lt;/a&gt; &lt;/li&gt;<br />
+                  &nbsp;&nbsp;&lt;/ul&gt;<br />
+                  &lt;/nav&gt;<br />
+                  <br />
+                  &lt;section id='naviContent'&gt;<br />
+                  &nbsp;&nbsp;&lt;ul&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li id='page1'&gt; Content for page 1 here
+                  &lt;/li&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li id='page2'&gt; Content for page 2 here
+                  &lt;/li&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li id='page3'&gt; Content for page 3 here
+                  &lt;/li&gt;<br />
+                  &nbsp;&nbsp;&lt;/ul&gt;<br />
+                  &lt;/section&gt;</code>
+                </div>
+
+                <p>The markup to use this plugin is very simple. Just setup a container
+                for both the menu and the content. Inside the menu container, create a
+                <code>ul</code> that contains an <code>li</code> for each page. The links
+                are standard but make sure the href includes the hash you choose followed
+                by the page name.</p>
+
+                <p><strong>Example: <code>&lt;a
+                href="hashPAGE"&gt;text&lt;/a&gt;</code></strong></p>
+
+                <div class="alert-box">
+                  TIP: Adding a class of <kbd style="color:black;">.active</kbd> to one
+                  of your menu's li will set this to the default page
+                </div>
+
+                <p>Make sure that the container structure is the same for both the menu
+                and the content. <strong>This plugin selects each container's <code>ul
+                &gt; li</code></strong>. Now make sure that each of your content's
+                <code>li</code> has an id of the page name (not including hash).<br />
+                <strong>Example: <code>&lt;li id='PAGE'&gt; Page content
+                &lt;/li&gt;</code></strong></p>
+				
+				<div class="alert-box">
+					TIP: Using Ajax? just leave your content's <kbd style="color:black;">li</kbd>'s empty!
+				</div>
+
+                <h4 class="chunk">JS</h4>
+
+                <div class="panel">
+                  <code>$("#naviMenu").navi({<br />
+                  &nbsp;&nbsp;hash: "#!/",<br />
+                  &nbsp;&nbsp;content: $("#naviContent")<br />
+                  });</code>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="chunk">Options</h3>
+
+            <div class="row">
+              <div class="large-11 columns small-centered">
+                <h4 class="chunk">Defaults</h4>
+
+                <div class="panel">
+                  <code>jQuery.navi({<br />
+                  &nbsp;&nbsp;hash: "#!/", //Hash to use<br />
+                  &nbsp;&nbsp;content: $("#content"), //Associates content<br />
+                  &nbsp;&nbsp;activeClass: "active", // Set class for active content<br />
+                  &nbsp;&nbsp;defaultPage: true, //Is a default page defined?<br />
+                  &nbsp;&nbsp;useAnimation: true, //Animates content<br />
+                  &nbsp;&nbsp;animationSpeed: 100, //Animation speed in ms<br />
+                  &nbsp;&nbsp;animationType: "slideUp", //The default animation<br />
+                  &nbsp;&nbsp;usePageTitle: true, //Change page title?<br />
+                  &nbsp;&nbsp;defaultPageTitle: "Navi.js", //The base title for
+                  pages<br />
+                  &nbsp;&nbsp;useBreadCrumbs: true, // Add support for breadcrumbs<br />
+				  &nbsp;&nbsp;useAjax: true, // Use ajax to load content<br/>
+				  &nbsp;&nbsp;ajaxExtension: ".html", // The extension of ajax pages<br/>
+                  &nbsp;&nbsp;ajaxFolder: "./", // The folder where the ajax pages are<br/>
+                  })</code>
+                </div>
+
+                <table class="responsive">
+                  <thead>
+                    <tr>
+                      <th>Option</th>
+
+                      <th>Type</th>
+
+                      <th>Description</th>
+
+                      <th>Version</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>hash</td>
+
+                      <td>String</td>
+
+                      <td>Set this to whatever hash you please</td>
+
+                      <td>1.0</td>
+                    </tr>
+
+                    <tr>
+                      <td>content</td>
+
+                      <td>jQuery Object</td>
+
+                      <td>The container of the content</td>
+
+                      <td>1.0</td>
+                    </tr>
+                    <tr>
+                        <td>activeClass</td>
+                        <td>String</td>
+                        <td>The class that gets loaded to the active content</td>
+                        <td>1.9</td>
+                    </tr>
+                    <tr>
+                      <td>defaultPage</td>
+
+                      <td>Boolean</td>
+
+                      <td>Set true if you want a default page. Set one li in the menu to
+                      have a class of <code>active</code></td>
+
+                      <td>1.0</td>
+                    </tr>
+
+                    <tr>
+                      <td>useAnimation</td>
+
+                      <td>Boolean</td>
+
+                      <td>Set true if you want animation between changes</td>
+
+                      <td>1.0</td>
+                    </tr>
+
+                    <tr>
+                      <td>animationType</td>
+
+                      <td>String</td>
+
+                      <td>Used to declare type of animation.</td>
+
+                      <td>1.2</td>
+                    </tr>
+
+                    <tr>
+                      <td>animationSpeed</td>
+
+                      <td>Integer|String</td>
+
+                      <td>Sets speed of animation. Integer in miliseconds. String values
+                      ("slow","medium","fast")</td>
+
+                      <td>1.0</td>
+                    </tr>
+
+                    <tr>
+                      <td>usePageTitle</td>
+
+                      <td>Boolean</td>
+
+                      <td>Changes the page title. Add <code>data-title="Your page
+                      title"</code> to each li in your menu</td>
+
+                      <td>1.1</td>
+                    </tr>
+
+                    <tr>
+                      <td>defaultPageTitle</td>
+
+                      <td>String</td>
+
+                      <td>The default base of the page title</td>
+
+                      <td>1.1</td>
+                    </tr>
+
+                    <tr>
+                      <td>useBreadCrumbs</td>
+
+                      <td>Boolean</td>
+
+                      <td>Set to true for breadcrumb support.</td>
+
+                      <td>1.5</td>
+                    </tr>
+
+                    <tr>
+                      <td>useAjax</td>
+
+                      <td>Boolean</td>
+
+                      <td>Set to true to enable the use of ajax pages. Create a file
+                      named after each <code>id</code>.</td>
+
+                      <td>1.7</td>
+                    </tr>
+
+                    <tr>
+                      <td>ajaxExtension</td>
+
+                      <td>String</td>
+
+                      <td>The extension of the files of the ajax pages to be loaded</td>
+
+                      <td>1.8</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ajaxFolder</td>
+                        <td>String</td>
+                        <td>The path to where you have your ajax pages stored</td>
+                        <td>1.9</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <h3 class="chunk">Page Titles</h3>
+
+            <div class="row">
+              <div class="large-11 columns small-centered">
+                <h4 class="chunk">Markup</h4>
+
+                <div class="panel">
+                  <h5 class="chunk">HTML</h5>
+                  <hr />
+                  <code>&lt;nav id='naviMenu'&gt;<br />
+                  &nbsp;&nbsp;&lt;ul&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="active" data-title=" -
+                  Page1"&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a
+                  href='#!/page1'&gt;Page1&lt;/a&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li data-title=" - Page2"&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a
+                  href='#!/page2'&gt;Page2&lt;/a&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li data-title=" - Page3"&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a
+                  href='#!/page3'&gt;Page3&lt;/a&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br />
+                  &nbsp;&nbsp;&lt;/ul&gt;<br />
+                  &lt;/nav&gt;<br />
+                  <br />
+                  &lt;section id='naviContent'&gt;<br />
+                  &nbsp;&nbsp;&lt;ul&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li id='page1'&gt; Content for page 1 here
+                  &lt;/li&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li id='page2'&gt; Content for page 2 here
+                  &lt;/li&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li id='page3'&gt; Content for page 3 here
+                  &lt;/li&gt;<br />
+                  &nbsp;&nbsp;&lt;/ul&gt;<br />
+                  &lt;/section&gt;</code>
+                  <hr />
+
+                  <h5 class="chunk">JS</h5><code>
+				  $("#naviMenu").navi({<br />
+                  &nbsp;&nbsp;hash: "#!/",<br />
+                  &nbsp;&nbsp;content: $("#naviContent"),<br />
+                  &nbsp;&nbsp;usePageTitle: true,<br />
+                  &nbsp;&nbsp;defaultPageTitle: "My Site"<br />
+                  });</code>
+                </div>
+
+                <p>In order to use Navi to change the page title you just need to add the
+                attribute <code>data-title</code> to each of your menu's <code>li</code>.
+                Then just set the <code>defaultPageTitle</code> to what you want
+                prepended before every <code>data-title</code>.</p>
+              </div>
+            </div>
+
+            <h3 class="chunk">BreadCrumbs</h3>
+
+            <div class="row">
+              <div class="large-11 columns small-centered">
+                <h4 class="chunk">Markup</h4>
+
+                <div class="panel">
+                  <h5 class="chunk">HTML</h5>
+                  <hr />
+                  <code>&lt;div id="breadcrumbs"&gt;<br />
+                  &nbsp;&nbsp;&lt;ul&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+                  href="#!/Page1"&gt;Page1&lt;/a&gt;&lt;/li&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+                  href="#!/Page2"&gt;Page2&lt;/a&gt;&lt;/li&gt;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+                  href="#!/Page3"&gt;Page3&lt;/a&gt;&lt;/li&gt;<br />
+                  &nbsp;&nbsp;&lt;/ul&gt;<br />
+                  &lt;/div&gt;</code>
+                  <hr />
+
+                  <h5 class="chunk">JS</h5><code>
+				  $("#naviMenu").navi({<br />
+                  &nbsp;&nbsp;hash: "#!/",<br />
+                  &nbsp;&nbsp;content: $("#naviContent"),<br />
+                  &nbsp;&nbsp;useBreadCrumbs: true,<br />
+                  });</code>
+                </div>
+
+                <p>Setting up breadcrumbs is now more easy to accomplish. Just set <code>useBreadCrumbs</code> to true, then Navi will find any links that point to the current hash, and then set the parent element to have the class as defined in <code>activeClass</code> </p>
+              </div>
+            </div>
+			
+			<h3 class="chunk">Ajax</h3>
+			<div class="row">
+				<div class="large-11 columns small-centered">
+					<h4 class="chunk">Markup</h4>
+					
+					<div class="panel">
+						<h5 class="chunk">HTML</h5>
+						<hr />
+						<code>
+							&lt;nav id='naviMenu'&gt;<br />
+							&nbsp;&nbsp;&lt;ul&gt;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="active"&gt; &lt;a href='#!/page1'&gt;Page1&lt;/a&gt; &lt;/li&gt;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt; &lt;a
+							href='#!/page2'&gt;Page2&lt;/a&gt; &lt;/li&gt;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt; &lt;a
+							href='#!/page3'&gt;Page3&lt;/a&gt; &lt;/li&gt;<br />
+							&nbsp;&nbsp;&lt;/ul&gt;<br />
+							&lt;/nav&gt;<br />
+							&lt;section id='naviContent'&gt;<br />
+							&nbsp;&nbsp;&lt;ul&gt;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;li id='page1'&gt; Keep Empty
+							&lt;/li&gt;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;li id='page2'&gt; Keep Empty
+							&lt;/li&gt;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;li id='page3'&gt; Keep Empty
+							&lt;/li&gt;<br />
+							&nbsp;&nbsp;&lt;/ul&gt;<br />
+							&lt;/section&gt;
+							<hr />
+							<h5 class="chunk">JS</h5>
+							$("#naviMenu").navi({<br/>
+							&nbsp;&nbsp;hash: "#!/",<br/>
+							&nbsp;&nbsp;content: $("#naviContent"),<br/>
+							&nbsp;&nbsp;useAjax: true,<br/>
+							&nbsp;&nbsp;ajaxExtension: ".html",<br/>
+                            &nbsp;&nbsp;ajaxFolder: "./"<br/>
+							});
+						</code>
+					</div>
+					<p>As of version 1.8, Navi now allows loading content using AJAX. The HTML markup is the exact same, except, leave the content's <code>li</code>'s empty. Create separate files for each <code>id</code> in your content section using the extension you called Navi with. 
+					</p>
+					<p><strong>Example: The pages to be made would be <code>page1.html</code> , <code>page2.html</code> , and <code>page3.html</code>. Then Place all these files in the folder defined by <code>ajaxFolder</code>.</strong>
+					</p>
+				</div>
+			</div>
+          </div>
+
+          <h2 class="chunk"><a href="#!/examples">Examples</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
