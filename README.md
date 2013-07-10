@@ -15,3 +15,15 @@ that explains this a little more in depth.
 * <b>simple_html_dom.php</b> - Dependency for navi.php, http://simplehtmldom.sourceforge.net
 * <b>site</b> - The site for Navi.js that is crawlable by Google.
 * <b>php</b> - Contains navi.php and simple_html_dom.php
+
+##Navi.php
+###Parameters
+<b>EX:</b><code>$navi = new Navi("menu.html","index.html","pages/home.html", "#content", ".active", "#navi");</code>
+* <b>menuLayout</b> - The file that contains the markup for your menu.
+* <b>layout</b> - The main layout that content will be loaded into (ex: "index.html").
+* <b>view</b> - The 'partial' page that will get loaded into the layout.
+* <b>contentId</b> - The selector of where in the layout the view will be placed inside of.
+* <b>menuActiveClass</b> - The class (including '.') of what will be added to a links parent elements.
+* <b>menuId</b> - The selector of where in the layout the generated menu will be placed.
+
+###Methods
