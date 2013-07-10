@@ -53,9 +53,9 @@
     **          Parameters : (src, code)
     **              src - The location of the source. Set to null if you want the code wrapped.
     **              code - The source of what to wrap the tags around.
-	**		replaceLinks - Finds and changes links that contain "#!" to "?_escaped_fragment_=".
-	**			Parameters : (html)
-	**				html - Where to find and replace links. 
+    **      replaceLinks - Finds and changes links that contain "#!" to "?_escaped_fragment_=".
+    **		Parameters : (html)
+    **		    html - Where to find and replace links.
     */
     class Navi {
         
