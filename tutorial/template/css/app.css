@@ -1,0 +1,16 @@
+.content-boxy {
+	
+}
+.content-boxy > hr {
+	border: 1px solid #A5A5A5;
+}
+
+#content {
+	border-bottom: 3px solid #222;
+}
+#content > ul {
+	margin-bottom: 0;
+}
+#content > ul > li {
+	list-style-type: none;
+}
