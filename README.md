@@ -32,6 +32,7 @@ that explains this a little more in depth.
      + <b>menuMarkup</b> - The file for you menu.
      + <b>activeClass</b> - The class that is added to a link's parent if the href is equal to 'activeLink'.
      + <b>activeLink</b> - What will be compared for each link's href.
+ - <b>Ex:</b><code>$myMenu = $navi->createCrawlerMenu("menu.html",".active","#!/home");</code>
  
 * <b>createSnapShot</b> - Creates a full HTML snapshot for a particular page. Adds in the crawlable menu, and tries to remove any Navi.js script. 
  - <h5>Parameters <small>- <b>(layout, menuId, contentId, view, menuLink, title, description, keywords)</b></small></h5>
@@ -43,36 +44,44 @@ that explains this a little more in depth.
      + <b>title</b> - The title for the page.
      + <b>description</b> - The description to be used for SEO.
      + <b>keywords</b> - The keywords to be used for SEO.
+ - <b>Ex:</b><code>$html = $navi->createSnapShot("index.html","#navi","#content","pages/home.html","Mysite - Home");</code>
  
 * <b>createAjax</b> - Returns the html just for the 'partial' page.
  - <h5>Parameters <small> - <b>(view)</b></small></h5>
      + <b>view</b> - See class parameters.
+ - <b>Ex:</b><code>$ajaxView = $navi->createAjax("pages/home.html");</code>
  
 * <b>injectInDom</b> - Injects markup into a specific selector in some html (replaces innertext).
  - <h5>Parameters <small> - <b>(html, markup, selector)</b></small></h5>
      + <b>html</b> - The html of where to look.
      + <b>markup</b> - The markup you wish to be placed in the selector.
      + <b>selector</b> - The selector of where your markup will be placed in the html.
+ - <b>Ex:</b><code>$newHtml = $navi->injectInDom($html, "&lt;h1>Hello, World&lt;/h1>", "#content");</code>
  
 * <b>appendInDom</b> - Appends markup to a specific selector in some html (appends to innertext).
  - <h5>Parameters <small> - <b>(html, markup, selector)</b></small></h5>
      + <b>html</b> - The html of where to look.
      + <b>markup</b> - The markup you wish to be appended in the selector.
      + <b>selector</b> - The selector of where your markup will be appended in the html.
+ - <b>Ex:</b><code>$charset = $navi->appendInDom($html, "&lt;meta charset='utf-8' />", "head");</code>
  
 * <b>metaDescription</b> - Returns the html for description.
  - <h5>Parameters <small> - <b>(content)</b></small></h5>
      + <b>content</b> - Description that will be placed in the returned tag.
+ - <b>Ex:</b><code>$description = $navi->metaDescription("This is my home page");</code>
  
 * <b>metaKeywords</b> - Returns the html for keywords.
  - <h5>Parameters <small> - <b>(keywords)</b></small></h5>
      + <b>keywords</b> - Comma-separated string of keywords.
+ - <b>Ex:</b><code>$keywords = $navi->metaKeywords("Home, page, hello, world");</code>
  
 * <b>loadFile</b> - Returns the html of a file.
  - <h5>Parameters <small> - <b>(file)</b></small></h5>
      + <b>file</b> - The file that is to be loaded and returned.
+ - <b>Ex:</b><code>$anotherPartial = $navi->loadFile("pages/home/part1.html");</code>
  
 * <b>addScript</b> - Returns the markup for a script. If src is null, wrap the code in script tags.
  - <h5>Parameters <small> - <b>(src, code)</b></small></h5>
      + <b>src</b> - The location of the source. Set to null if you want the code wrapped.
      + <b>code</b> - The source of what to wrap the tags around.
+ - <b>Ex:</b><code>$jsCode = $navi->addScript(null, "alert('hello world!');");</code>
