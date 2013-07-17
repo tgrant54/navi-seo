@@ -1,44 +1,31 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
   <title>Navi.js + SEO | Tutorial</title>
-
-  
   <link rel="stylesheet" href="css/foundation.css" />
   <link rel="stylesheet" href="css/app.css" />
-  
-
   <script src="js/vendor/custom.modernizr.js"></script>
-
 </head>
 <body>
-	<!-- This example of using Navi.js with Zurb's Foundation 4 (v4.2.3) 
-	     The page layouts comes from http://foundation.zurb.com/templates.php 
-			 
-	     home -> slightly modded reality
-	     aboutme -> slightly modded workspace
-	     portfolio -> grid
-	     contact -> slightly modded contact
-	-->
+  <!-- This example of using Navi.js with Zurb's Foundation 4 (v4.2.3)
+  The page layouts comes from http://foundation.zurb.com/templates.php 			 
+    home -> slightly modded reality
+    aboutme -> slightly modded workspace
+    portfolio -> grid
+    contact -> slightly modded contact
+  -->
   <nav class="top-bar">
     <ul class="title-area">
-      <!-- Title Area -->
       <li class="name">
-        <h1>
-          <a href="#">
-            My Portfolio
-          </a>
-        </h1>
+        <h1><a href="#">My Portfolio</a></h1>
       </li>
       <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
     </ul>
- 
     <section id="navi" class="top-bar-section">
-      <!-- Left Nav Section -->
       <ul class="left">
         <li class="divider"></li>
         <li data-title=" - Home" class="active"><a href="#!/home">Home</a></li>
@@ -64,19 +51,20 @@
     <div class="large-12 columns"><hr />
       <div class="row">
         <div class="large-6 columns">
-            <p>&copy; Copyright no one at all. Go to town.</p>
+          <p>&copy; Copyright no one at all. Go to town.</p>
         </div>
-        <div class="large-6 columns">
-            <ul class="inline-list right">
-              <li><a href="#!/home">Home</a></li>
-              <li><a href="#!/aboutme">About Me</a></li>
-              <li><a href="#!/portfolio">Portfolio</a></li>
-              <li><a href="#!/contact">Contact</a></li>
-            </ul>
+        <div id="footer-links" class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#!/home">Home</a></li>
+            <li><a href="#!/aboutme">About Me</a></li>
+            <li><a href="#!/portfolio">Portfolio</a></li>
+            <li><a href="#!/contact">Contact</a></li>
+          </ul>
         </div>
       </div>
     </div>
   </footer>
+  
   <script>
   document.write('<script src=' +
   ('__proto__' in {} ? 'js/vendor/jquery' : 'js/vendor/zepto') +
@@ -96,7 +84,7 @@
 	$("#navi > ul > li").each(function(i,e) {
 	  if (!$(e).attr("data-title")) {
 	    $(e).addClass("divider");
-	  }
+          }
 	});
       });
   </script>
