@@ -7,8 +7,10 @@ engines. Navi.php is a php class which will help you create snapshots to return 
 (to the best of my knowledge) to follow [Google's ajax crawling scheme](https://developers.google.com/webmasters/ajax-crawling/).
  
 The included site has a commented index.php file, so that you can see how I integrated my class to create a snapshot
-if the request contained the Google's '_escaped_fragment_' query. Also this repo will soon contain a small tutorial
-that explains this a little more in depth.
+if the request contained the Google's '_escaped_fragment_' query. 
+
+##Tutorials
+* [Navi.js SEO Tutorial](https://github.com/tgrant54/navi-seo/wiki/Tutorial)
 
 ##Whats Included?
 * <b>navi.php</b> - PHP class that will help with alot of tasks. (The Meat)
