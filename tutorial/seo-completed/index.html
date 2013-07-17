@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Navi.js + SEO | Tutorial</title>
+
+  
+  <link rel="stylesheet" href="css/foundation.css" />
+	<link rel="stylesheet" href="css/app.css" />
+  
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+	<!-- This example of using Navi.js with Zurb's Foundation 4 (v4.2.3) 
+	     The page layouts comes from http://foundation.zurb.com/templates.php 
+			 
+			 home -> slightly modded reality
+			 aboutme -> slightly modded workspace
+			 portfolio -> grid
+			 contact -> slightly modded contact
+	-->
+	<nav class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="#">
+            My Portfolio
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
+    </ul>
+ 
+    <section id="navi" class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li class="divider"></li>
+        <li data-title=" - Home" class="active"><a href="#!/home">Home</a></li>
+        <li class="divider"></li>
+        <li data-title=" - About Me"><a href="#!/aboutme">About Me</a></li>
+        <li class="divider"></li>
+        <li data-title=" - Portfolio"><a href="#!/portfolio">Portfolio</a></li>
+				<li class="divider"></li>
+				<li data-title=" - Contact"><a href="#!/contact">Contact</a></li>
+				<li class="divider"></li>
+      </ul>
+    </section>
+  </nav>
+	<section id="content">
+		<ul>
+			<li id="home"></li>
+			<li id="aboutme"></li>
+			<li id="portfolio"></li>
+			<li id="contact"></li>
+		</ul>
+	</section>
+	<footer class="row">
+		<div class="large-12 columns"><hr />
+      <div class="row">
+        <div class="large-6 columns">
+            <p>&copy; Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-6 columns">
+            <ul class="inline-list right">
+              <li><a href="#!/home">Home</a></li>
+              <li><a href="#!/aboutme">About Me</a></li>
+              <li><a href="#!/portfolio">Portfolio</a></li>
+              <li><a href="#!/contact">Contact</a></li>
+            </ul>
+        </div>
+      </div>
+		</div>
+  </footer>
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/jquery' : 'js/vendor/zepto') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="js/foundation.min.js"></script>
+	<script src="js/foundation/foundation.orbit.js"></script>
+	<script src="js/navi-1.9.js"></script>
+	<script src="js/script.js"></script>
+  
+  
+  <script>
+    $(document).foundation();
+		$(document).ajaxComplete(function(){ 
+			$(document).foundation();
+			$("#navi > ul > li").each(function(i,e) {
+				if (!$(e).attr("data-title")) {
+					$(e).addClass("divider");
+				}
+			});
+		});
+  </script>
+</body>
+</html>
