@@ -15,6 +15,10 @@ that explains this a little more in depth.
 * <b>simple_html_dom.php</b> - Dependency for navi.php, http://simplehtmldom.sourceforge.net
 * <b>site</b> - The site for Navi.js that is crawlable by Google.
 * <b>php</b> - Contains navi.php and simple_html_dom.php
+* <b>tutorial</b> - Contains files for use with the tutorial
+  - template - blank template that inludes foundation + navi.js and required structure
+  - completed - Has all of the markup used in the tutorial
+  - seo-completed - All of the markup + result after fully following tutorial
 
 ##Navi.php
 ###Parameters
